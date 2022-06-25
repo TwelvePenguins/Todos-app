@@ -10,14 +10,22 @@ import SwiftUI
 struct ContentView: View {
     
     var todos = [
-        Todo(title: "Watch some paw patrol"),
+        Todo(title: "Watch some paw patrol", isCompleted: true),
         Todo(title: "Conduct a giveaway"),
         Todo(title: "Randomly deduct some points")
     ]
     
     var body: some View {
-        List(todos) { todo in
-            
+        NavigationView{
+            List(todos) { todo in
+                HStack {
+                    Image(systemName: todo.isCompleted ? "checkmark.circle.fill" : "circle")
+                    Text(todo.title)
+                        .strikethrough(todo.isCompleted)
+                        .foregroundColor(todo.isCompleted ? .green : .red)
+                }
+            }
+            .navigationTitle("My important things")
         }
     }
 }
