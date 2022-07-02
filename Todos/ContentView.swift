@@ -51,7 +51,7 @@ struct ContentView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing){
                     Button {
-                        
+                        isSheetGiven = true
                     }label: {
                         Image(systemName: "plus")
                     }

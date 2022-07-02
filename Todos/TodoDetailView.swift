@@ -24,7 +24,7 @@ struct TodoDetailView: View {
                     todo.isCompleted.toggle()
                 }
             }label: {
-                Text("Mark as \(todo.isCompleted ? "complete" : "incomplete") ")
+                Text("Mark as \(todo.isCompleted ? "incomplete" : "complete") ")
                     .foregroundColor(.white)
                     .padding()
                     .background(.blue)
