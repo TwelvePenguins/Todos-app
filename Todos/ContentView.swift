@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @State var isSheetGiven = false
     @State var todos = [
         Todo(title: "TRYHARD IN ELDEN RING", isCompleted: true, details: "Deeproot depths"),
         Todo(title: "Cry over red dead redemption 2"),
@@ -49,6 +49,16 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     EditButton()
                 }
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Button {
+                        
+                    }label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            .sheet(isPresented: $isSheetGiven){
+                NewTodoView(todos:$todos)
             }
         }
     }

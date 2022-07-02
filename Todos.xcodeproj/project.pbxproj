@@ -13,6 +13,7 @@
 		550767082866A72500600DF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 550767072866A72500600DF9 /* Preview Assets.xcassets */; };
 		5507670F2866A7DF00600DF9 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507670E2866A7DF00600DF9 /* Todo.swift */; };
 		550767112866B59C00600DF9 /* TodoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550767102866B59C00600DF9 /* TodoDetailView.swift */; };
+		55076713286FF34200600DF9 /* NewTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55076712286FF34200600DF9 /* NewTodoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		550767072866A72500600DF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5507670E2866A7DF00600DF9 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		550767102866B59C00600DF9 /* TodoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailView.swift; sourceTree = "<group>"; };
+		55076712286FF34200600DF9 /* NewTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				550767002866A72400600DF9 /* TodosApp.swift */,
 				550767022866A72400600DF9 /* ContentView.swift */,
+				55076712286FF34200600DF9 /* NewTodoView.swift */,
 				550767102866B59C00600DF9 /* TodoDetailView.swift */,
 				5507670E2866A7DF00600DF9 /* Todo.swift */,
 				550767042866A72500600DF9 /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 				550767032866A72400600DF9 /* ContentView.swift in Sources */,
 				5507670F2866A7DF00600DF9 /* Todo.swift in Sources */,
 				550767012866A72400600DF9 /* TodosApp.swift in Sources */,
+				55076713286FF34200600DF9 /* NewTodoView.swift in Sources */,
 				550767112866B59C00600DF9 /* TodoDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
