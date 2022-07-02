@@ -9,26 +9,51 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var todos = [
-        Todo(title: "Watch some paw patrol", isCompleted: true),
-        Todo(title: "Conduct a giveaway"),
-        Todo(title: "Randomly deduct some points")
+    @State var todos = [
+        Todo(title: "TRYHARD IN ELDEN RING", isCompleted: true, details: "Deeproot depths"),
+        Todo(title: "Cry over red dead redemption 2"),
+        Todo(title: "Actually do homework")
     ]
     
     var body: some View {
-        NavigationView{
-            List(todos) { todo in
-                HStack {
-                    Image(systemName: todo.isCompleted ? "checkmark.circle.fill" : "circle")
-                    Text(todo.title)
-                        .strikethrough(todo.isCompleted)
-                        .foregroundColor(todo.isCompleted ? .green : .red)
+        NavigationView {
+            List {
+                ForEach ($todos) { $todo in
+                    NavigationLink{
+                        TodoDetailView(todo: $todo)
+                    } label: {
+                        HStack {
+                            Image(systemName: todo.isCompleted ? "checkmark.circle.fill" : "circle")
+                            VStack (alignment: .leading){
+                                Text(todo.title)
+                                    .strikethrough(todo.isCompleted)
+                                    .foregroundColor(todo.isCompleted ? .green : .red)
+                                if !todo.details.isEmpty{
+                                    Text(todo.details)
+                                        .font(.caption)
+                                        .foregroundColor(.gray)
+                                }
+                            }
+                        }
+                    }
+                }
+                .onMove { oldOffset, newOffset in
+                    todos.move(fromOffsets: oldOffset, toOffset: newOffset)
+                }
+                .onDelete { indexSet in
+                    todos.remove(atOffsets: indexSet)
                 }
             }
             .navigationTitle("My important things")
+            .toolbar { //at top and bottom
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
+                }
+            }
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
