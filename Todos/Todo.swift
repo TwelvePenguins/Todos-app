@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Todo: Identifiable{ //struct now conforms to protocol called identifiable
+struct Todo: Identifiable, Codable{ //struct now conforms to protocol called identifiable
     
-    let id = UUID()
+    var id = UUID()
     var title: String
     var isCompleted: Bool = false //default value
     var details: String = ""

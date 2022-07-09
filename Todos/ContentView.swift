@@ -14,11 +14,14 @@ struct ContentView: View {
         Todo(title: "Cry over red dead redemption 2"),
         Todo(title: "Actually do homework")
     ]
+    @AppStorage ("username") var name = ""
+    @StateObject var todoManager = TodoManager()
     
     var body: some View {
         NavigationView {
             List {
-                ForEach ($todos) { $todo in
+                TextField("Enter your name", text: $name)
+                ForEach ($todoManager.todos) { $todo in
                     NavigationLink{
                         TodoDetailView(todo: $todo)
                     } label: {
@@ -38,10 +41,10 @@ struct ContentView: View {
                     }
                 }
                 .onMove { oldOffset, newOffset in
-                    todos.move(fromOffsets: oldOffset, toOffset: newOffset)
+                    todoManager.todos.move(fromOffsets: oldOffset, toOffset: newOffset)
                 }
                 .onDelete { indexSet in
-                    todos.remove(atOffsets: indexSet)
+                    todoManager.todos.remove(atOffsets: indexSet)
                 }
             }
             .navigationTitle("My important things")
@@ -58,7 +61,7 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $isSheetGiven){
-                NewTodoView(todos:$todos)
+                NewTodoView(todos: $todos)
             }
         }
     }
